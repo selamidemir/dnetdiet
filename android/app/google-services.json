@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035027225941",
+    "project_id": "dnetdiet",
+    "storage_bucket": "dnetdiet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035027225941:android:223f601e0a6584f3eee3dc",
+        "android_client_info": {
+          "package_name": "com.dnetdiyet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035027225941-gksp579u9gbgbuu2hrh2n352mung9c7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEGGOuoDSzbOAPccYfMnYrYijr37Gjubc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035027225941-gksp579u9gbgbuu2hrh2n352mung9c7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
