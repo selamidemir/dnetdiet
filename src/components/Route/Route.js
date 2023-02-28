@@ -16,6 +16,7 @@ import TabSetting from '../TabSetting';
 import TabReport from '../TabReport';
 import Foods from '../Foods';
 import Diets from '../Diets';
+import AddFood from '../AddFood';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +28,7 @@ const TabFood = () => {
   return (
     <StackFood.Navigator screenOptions={{headerShown: false}}>
       <StackFood.Screen name="foodsPage" component={Foods} />
+      <StackFood.Screen name="addFoodPage" component={AddFood} />
     </StackFood.Navigator>
   );
 };
@@ -41,7 +43,9 @@ const TabDiet = () => {
 
 const App = () => {
   const login = useSelector(selector => selector.login);
-  const isProfileSettingOk = useSelector(selector => selector.isProfileSettingOk);
+  const isProfileSettingOk = useSelector(
+    selector => selector.isProfileSettingOk,
+  );
 
   return (
     <NavigationContainer>
@@ -51,13 +55,31 @@ const App = () => {
           <StackProfile.Screen name="profileSingIn" component={SingIn} />
         </StackProfile.Navigator>
       ) : (
-        <Tab.Navigator screenOptions={{headerShown: false}} initialRouteName={isProfileSettingOk ? 'homeTab' : 'settingTab'}>
-          <Tab.Screen name="profileTab" component={Profile} />
-          <Tab.Screen name="foodTab" component={TabFood} />
-          <Tab.Screen name="dietTab" component={TabDiet} />
-          <Tab.Screen name="reportTab" component={TabReport} />
-          <Tab.Screen name="settingTab" component={TabSetting} />
-          <Tab.Screen name="homeTab" component={TabHome} />
+        <Tab.Navigator
+          screenOptions={{headerShown: false}}
+          initialRouteName={isProfileSettingOk ? 'homeTab' : 'settingTab'}>
+          {/* <Tab.Screen name="profileTab" component={Profile} /> */}
+          <Tab.Screen
+            name="profileTab"
+            options={{title: 'Ben'}}
+            component={TabSetting}
+          />
+          <Tab.Screen
+            name="foodTab"
+            options={{title: 'Yemekler'}}
+            component={TabFood}
+          />
+          <Tab.Screen
+            name="dietTab"
+            options={{title: 'Günlük'}}
+            component={TabDiet}
+          />
+          <Tab.Screen
+            name="reportTab"
+            options={{title: 'Raporlar'}}
+            component={TabReport}
+          />
+          {/* <Tab.Screen name="homeTab" component={TabHome} /> */}
         </Tab.Navigator>
       )}
     </NavigationContainer>
